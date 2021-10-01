@@ -1,7 +1,7 @@
 <template>
-    <div class="ContentZone ContentZone__footer">
+    <div class="ContentZone ContentZone__footer" v-if="basicInformation !=0">
         <div class="Prefooter">
-            <div v-if="back_to_top" class="Prefooter__buttonContainer">
+            <div v-if="back_to_top != 0" class="Prefooter__buttonContainer">
                 <button type="button" class="Prefooter__returnToTop" @click="scrollToTop()">
                     <div class="Button__content">{{back_to_top}}</div>
                 </button>
@@ -22,29 +22,29 @@
                     </span>
                 </li>
             </ul>
-    </div>
-    <footer itemscope="" itemtype="http://schema.org/WPFooter" class="Footer">
-        <div class="Footer__section">
-            <div class="SeoFooter"></div>
         </div>
-        <div class="Footer__section">
-            <div v-if="mainNavigation" class="Footer__columns">
-                <div v-for="(mainNav, mainNavIndex) in mainNavigation" :key="mainNavIndex" class="FooterColumn Footer__column" role="button" tabindex="0">
-                    <p v-if="mainNav.active" class="FooterColumn__titleColumn" @click.prevent="toggle(mainNavIndex)">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="FooterColumn__SvgIcon">
-                            <path v-if="!isVisible(mainNavIndex)" d="M1.822 7.527a1.058 1.058 0 0 0-1.46 1.532l14.384 13.707L29.624 9.071a1.059 1.059 0 0 0-1.432-1.558l-13.42 12.354-12.95-12.34z"></path>
-                            <path v-if="isVisible(mainNavIndex)" d="M28.177 22.473a1.058 1.058 0 0 0 1.46-1.532L15.253 7.234.377 20.93a1.058 1.058 0 1 0 1.433 1.557l13.419-12.353 12.948 12.339z"></path>
-                        </svg>{{mainNav.title}}
-                    </p>
-                    <ul v-if="mainNav.active" :class="['FooterColumn__linksList', {'is-visible' : isVisible(mainNavIndex)}]">
-                        <li v-for="(mainNavItem, mainNavItemIndex) in mainNav.children" :key="mainNavItemIndex" class="FooterColumn__linkContainer">
-                            <a v-if="mainNavItem.active" :title="mainNavItem.title" :target="mainNavItem.target" class="FooterColumn__link" :href="mainNavItem.url">{{mainNavItem.title}}</a>
-                        </li>
-                    </ul>
-                </div>
+        <footer itemscope="" itemtype="http://schema.org/WPFooter" class="Footer">
+            <div class="Footer__section">
+                <div class="SeoFooter"></div>
             </div>
-            <div v-if="socialLinks.schema[0]" class="FooterSocialNetwork Footer__social">
-                <p class="FooterSocialNetwork__titleColumn">{{socialLinks.schema[0].title}}</p>
+            <div class="Footer__section">
+                <div v-if="mainNavigation != 0" class="Footer__columns">
+                    <div v-for="(mainNav, mainNavIndex) in mainNavigation" :key="mainNavIndex" class="FooterColumn Footer__column" role="button" tabindex="0">
+                        <p v-if="mainNav.active" class="FooterColumn__titleColumn" @click.prevent="toggle(mainNavIndex)">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="FooterColumn__SvgIcon">
+                                <path v-if="!isVisible(mainNavIndex)" d="M1.822 7.527a1.058 1.058 0 0 0-1.46 1.532l14.384 13.707L29.624 9.071a1.059 1.059 0 0 0-1.432-1.558l-13.42 12.354-12.95-12.34z"></path>
+                                <path v-if="isVisible(mainNavIndex)" d="M28.177 22.473a1.058 1.058 0 0 0 1.46-1.532L15.253 7.234.377 20.93a1.058 1.058 0 1 0 1.433 1.557l13.419-12.353 12.948 12.339z"></path>
+                            </svg>{{mainNav.title}}
+                        </p>
+                        <ul v-if="mainNav.active" :class="['FooterColumn__linksList', {'is-visible' : isVisible(mainNavIndex)}]">
+                            <li v-for="(mainNavItem, mainNavItemIndex) in mainNav.children" :key="mainNavItemIndex" class="FooterColumn__linkContainer">
+                                <a v-if="mainNavItem.active" :title="mainNavItem.title" :target="mainNavItem.target" class="FooterColumn__link" :href="mainNavItem.url">{{mainNavItem.title}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div v-if="socialLinks.schema[0]" class="FooterSocialNetwork Footer__social">
+                    <p class="FooterSocialNetwork__titleColumn">{{socialLinks.schema[0].title}}</p>
                     <ul class="FooterSocialNetwork__socialNetworkLinks">
                         <li v-for="(social, socialIndex) in socialLinks.schema[0].children" :key="socialIndex" class="FooterSocialNetwork__socialNetworkElement">
                             <a :href="social.url" :title="social.url" class="FooterSocialNetwork__socialNetworkLink" target="_blank" rel="noopener">
@@ -59,7 +59,7 @@
                     </ul>
                 </div>
             </div>
-            <nav v-if="legalNavigation" class="FooterLegal">
+            <nav v-if="legalNavigation != 0" class="FooterLegal">
                 <ul class="FooterLegal__list">
                     <li v-for="(legal, legalIndex) in legalNavigation" :key="legalIndex" class="FooterLegal__element">
                         <a :title="legal.title" class="FooterLegal__link" :href="legal.url">{{legal.title}}</a>

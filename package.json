@@ -1,15 +1,15 @@
 {
-  "name": "@wssto2/rv-nissan-header-footer",
-  "version": "1.1.2",
+  "name": "@wssto2/rv-renault-header-footer-cro-slo-srb",
+  "version": "1.0.1",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wssto2/rv-nissan-header-footer.git"
+    "url": "git+https://github.com/wssto2/rv-renault-header-footer-cro-slo-srb.git"
   },
   "bugs": {
-    "url": "https://github.com/wssto2/rv-nissan-header-footer/issues"
+    "url": "https://github.com/wssto2/rv-renault-header-footer-cro-slo-srb/issues"
   },
-  "homepage": "https://github.com/wssto2/rv-nissan-header-footer",
+  "homepage": "https://github.com/wssto2/rv-renault-header-footer-cro-slo-srb",
   "publishConfig": {
     "access": "public"
   },

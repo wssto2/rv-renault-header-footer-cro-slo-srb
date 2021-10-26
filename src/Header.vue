@@ -147,13 +147,12 @@
             window.addEventListener('click', this.del);
 
             window.addEventListener('resize', this.handleResize);
-            
-
-
         },
+
         beforeDestroy() {
             window.removeEventListener('click', this.del)
         },
+
         destroyed(){
             window.removeEventListener('resize', this.handleResize)
         },

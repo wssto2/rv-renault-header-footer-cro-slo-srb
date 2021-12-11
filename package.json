@@ -1,23 +1,23 @@
 {
-  "name": "@wssto2/rv-nissan-header-footer",
-  "version": "1.0.4",
+  "name": "@wssto2/rv-renault-header-footer-cro-slo-srb",
+  "version": "1.0.2",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wssto2/rv-nissan-header-footer.git"
+    "url": "git+https://github.com/wssto2/rv-renault-header-footer-cro-slo-srb.git"
   },
   "bugs": {
-    "url": "https://github.com/wssto2/rv-nissan-header-footer/issues"
+    "url": "https://github.com/wssto2/rv-renault-header-footer-cro-slo-srb/issues"
   },
-  "homepage": "https://github.com/wssto2/rv-nissan-header-footer",
+  "homepage": "https://github.com/wssto2/rv-renault-header-footer-cro-slo-srb",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "buildOld": "vue-cli-service build",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "buildOld": "npm run build:umd & npm run build:es & npm run build:unpkg",
     "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/main.umd.js",
     "build:es": "rollup --config build/rollup.config.js --format es --file dist/main.esm.js",
     "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/main.min.js"
@@ -67,10 +67,5 @@
     "last 2 versions",
     "not dead"
   ],
-  "main": "dist/main.umd.js",
-  "module": "dist/main.esm.js",
-  "unpkg": "dist/main.min.js",
-  "browser": {
-    "./sfc": "src/RnaContactForm.vue"
-  }
+  "unpkg": "dist/js/app.js"
 }

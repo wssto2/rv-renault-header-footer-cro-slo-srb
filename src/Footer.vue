@@ -60,12 +60,14 @@
                 </div>
             </div>
             <nav v-if="legalNavigation != 0" class="FooterLegal">
+                <div class="FooterLegal__links">
                 <ul class="FooterLegal__list">
                     <li v-for="(legal, legalIndex) in legalNavigation" :key="legalIndex" class="FooterLegal__element">
                         <a :title="legal.title" class="FooterLegal__link" :href="legal.url">{{legal.title}}</a>
                     </li>
                 </ul>
                 <span v-if="basicInformation.meta.footer_trademark" class="FooterLegal__copyright">{{footer_trademark}}</span>
+                </div>
             </nav>
         </footer>
     </div>

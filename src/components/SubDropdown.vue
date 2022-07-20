@@ -23,6 +23,16 @@
                 </li>
             </ul>
         </div>
+        <div v-if="megaDropdown.meta.hasImage" class="MainMenuMegaDropDownContent__imageColumn">
+            <a :href="megaDropdown.meta.imageLink" :title="megaDropdown.meta.imageTitle" class="ImageColumn__title" target="_blank" rel="noopener">
+            <p>{{megaDropdown.meta.imageTitle}}</p>
+            <picture class="LazyPictureElement LazyPictureElement_loaded ImageColumn__image">
+                
+                <img :src="megaDropdown.meta.image" :alt="megaDropdown.meta.imageTitle" class="PictureElement__imgDefault">
+                
+            </picture>
+            </a>
+        </div>
     </li>
 </template>
 

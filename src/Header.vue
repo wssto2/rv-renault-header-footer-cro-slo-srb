@@ -59,7 +59,16 @@
                                                                 <img :src="vehicleGroupe.icon" :alt="vehicleGroupe.title" class="PictureElement__imgDefault">
                                                             </picture>
                                                         </figure>
-                                                        <a v-if="!vehicleGroupe.meta.more_vehicles" :title="vehicleGroupe.title" class="MainMenuModel__name" :href="vehicleGroupe.url">{{vehicleGroupe.title}}</a>
+                                                        <div v-if="!vehicleGroupe.meta.more_vehicles" class="MainMenuModel__nameAndTags">
+                                                            <a v-if="!vehicleGroupe.meta.more_vehicles" :title="vehicleGroupe.title" class="MainMenuModel__name" :href="vehicleGroupe.url">{{vehicleGroupe.title}}</a>
+                                                            <div v-if="vehicleGroupe.meta.blueSubText" class="EnergyTagList MainMenuModel__tagsList is-inline">
+                                                                <ul class="EnergyTagList__tagList">
+                                                                    <li class="EnergyTagList__tag has-noBorder">
+                                                                        <span class="EnergyTag has-noBorder is-EV">{{vehicleGroupe.meta.blueSubText}}</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
                                                         <div v-if="vehicleGroupe.meta.more_vehicles" class="MainMenuRangeModels__elementLinkInner">
                                                             <button class="ButtonMore MainMenuRangeModels__link" @click="openMore(vehicleGroupe.url)">
                                                                 <span class="ButtonMore__picto">
@@ -307,3 +316,4 @@
         src:url(./assets/fonts/PictosComplete-Regular.woff) format("woff")
     }
 </style>
+
